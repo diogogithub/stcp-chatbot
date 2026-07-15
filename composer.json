@@ -1,0 +1,52 @@
+{
+    "name": "diogogithub/stcp-telegram-bot",
+    "type": "project",
+    "description": "Unofficial Telegram bot for STCP stop arrivals and route information in Porto",
+    "keywords": [
+        "bot",
+        "porto",
+        "public-transport",
+        "stcp",
+        "telegram"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Diogo Peralta Cordeiro",
+            "homepage": "https://www.diogo.site/"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-mbstring": "*",
+        "ext-pdo": "*",
+        "longman/telegram-bot": "^0.83.1"
+    },
+    "require-dev": {
+        "php-parallel-lint/php-parallel-lint": "^1.4",
+        "squizlabs/php_codesniffer": "^3.11"
+    },
+    "autoload": {
+        "psr-4": {
+            "Diogo\\StcpTelegramBot\\": "src/"
+        }
+    },
+    "scripts": {
+        "check": [
+            "@validate",
+            "@lint",
+            "@style",
+            "@test"
+        ],
+        "lint": "parallel-lint --exclude vendor .",
+        "style": "phpcs",
+        "test": "php tests/run.php",
+        "validate": "composer validate --strict"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true
+    }
+}

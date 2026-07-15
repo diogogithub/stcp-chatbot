@@ -1,0 +1,27 @@
+<?php
+
+declare(strict_types=1);
+
+namespace Longman\TelegramBot\Commands\SystemCommands;
+
+use Longman\TelegramBot\Commands\SystemCommand;
+use Longman\TelegramBot\Entities\ServerResponse;
+
+final class StartCommand extends SystemCommand
+{
+    protected $name = 'start';
+    protected $description = 'Apresentação do bot';
+    protected $usage = '/start';
+    protected $version = '1.0.0';
+    protected $private_only = true;
+
+    public function execute(): ServerResponse
+    {
+        return $this->replyToChat(
+            "Olá! Posso consultar informação da STCP.\n\n"
+            . "Envie um código de paragem, como FCUP1, para ver as próximas passagens. "
+            . "Envie uma linha, como 404, 1M ou ZC, para ver as paragens nos dois sentidos.\n\n"
+            . 'Use /help para consultar os comandos disponíveis.'
+        );
+    }
+}

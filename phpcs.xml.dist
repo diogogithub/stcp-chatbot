@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ruleset name="STCP Telegram Bot">
+    <description>Code style rules for the STCP Telegram Bot.</description>
+
+    <arg value="sp"/>
+    <arg name="colors"/>
+    <arg name="encoding" value="utf-8"/>
+    <arg name="extensions" value="php"/>
+    <arg name="parallel" value="8"/>
+
+    <file>bin</file>
+    <file>commands</file>
+    <file>public</file>
+    <file>src</file>
+    <file>tests</file>
+
+    <rule ref="PSR12"/>
+</ruleset>
