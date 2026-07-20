@@ -27,12 +27,12 @@
   },
   "scripts": {
     "check": [
-      "@validate",
+      "@validate-config",
       "@lint",
       "@cs",
       "@test"
     ],
-    "validate": "composer validate --strict",
+    "validate-config": "composer validate --strict",
     "lint": "parallel-lint --exclude vendor .",
     "cs": "phpcs",
     "test": "phpunit --testdox"
